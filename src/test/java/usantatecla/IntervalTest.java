@@ -87,4 +87,10 @@ public class IntervalTest {
     assertTrue(interval.intersect(interval1));
   }
 
+  @Test
+  public void givenIntervalOpenOpenWhenIntersectWithTheSameThenFalse() {
+    Interval interval = this.intervalBuilder.open(left.getEquals()).open(right.getEquals()).build();
+    assertFalse(interval.intersect(interval));
+  }
+
 }
