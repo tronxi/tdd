@@ -93,4 +93,10 @@ public class IntervalTest {
     assertFalse(interval.intersect(interval));
   }
 
+  @Test
+  public void givenIntervalClosedClosedWhenIntersectWithTheSameThenIntersect() {
+    Interval interval = this.intervalBuilder.closed(left.getEquals()).closed(right.getEquals()).build();
+    assertTrue(interval.intersect(interval));
+  }
+
 }
