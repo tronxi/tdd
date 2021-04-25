@@ -80,4 +80,11 @@ public class IntervalTest {
     assertTrue(interval.intersect(interval1));
   }
 
+  @Test
+  public void givenIntervalOpenOpenWhenIncludeLeftAndRightPointFromIntervalOpenOpenThenTrue() {
+    Interval interval = this.intervalBuilder.open(left.getGreater()).open(right.getLess()).build();
+    Interval interval1 = new IntervalBuilder().open(left.getEquals()).open(right.getEquals()).build();
+    assertTrue(interval.intersect(interval1));
+  }
+
 }
