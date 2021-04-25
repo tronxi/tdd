@@ -15,6 +15,10 @@ public class Interval {
 			return this.min.isWithin(value) && this.max.isWithin(value);
 	}
 
+	public boolean intersect(Interval interval) {
+		return true;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -49,9 +53,5 @@ public class Interval {
 	@Override
 	public String toString() {
 		return this.min.toString() + ", " + max.toString();
-	}
-
-	public boolean intersect(Interval interval) {
-		return false;
 	}
 }
