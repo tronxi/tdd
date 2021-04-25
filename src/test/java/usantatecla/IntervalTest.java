@@ -120,5 +120,12 @@ public class IntervalTest {
     assertTrue(interval.intersect(interval1));
   }
 
+  @Test
+  public void givenIntervalClosedClosedWhenIncludeLeftPointFromIntervalOpenOpenThenNotIntersect() {
+    Interval interval = this.intervalBuilder.closed(left.getEquals()).closed(right.getEquals()).build();
+    Interval interval1 = new IntervalBuilder().open(left.getEquals()).open(right.getEquals()).build();
+    assertFalse(interval.intersect(interval1));
+  }
+
 
 }
