@@ -67,28 +67,28 @@ public class IntervalTest {
   }
 
   @Test
-  public void givenIntervalOpenOpenWhenIncludeLeftPointFromIntervalOpenOpenThenTrue() {
+  public void givenIntervalOpenOpenWhenIncludeLeftPointFromIntervalOpenOpenThenIntersect() {
     Interval interval = this.intervalBuilder.open(left.getEquals()).open(right.getEquals()).build();
     Interval interval1 = new IntervalBuilder().open(left.getLess()).open(left.getGreater()).build();
     assertTrue(interval.intersect(interval1));
   }
 
   @Test
-  public void givenIntervalOpenOpenWhenIncludeRightPointFromIntervalOpenOpenThenTrue() {
+  public void givenIntervalOpenOpenWhenIncludeRightPointFromIntervalOpenOpenThenIntersect() {
     Interval interval = this.intervalBuilder.open(left.getEquals()).open(right.getEquals()).build();
     Interval interval1 = new IntervalBuilder().open(right.getLess()).open(right.getGreater()).build();
     assertTrue(interval.intersect(interval1));
   }
 
   @Test
-  public void givenIntervalOpenOpenWhenIncludeLeftAndRightPointFromIntervalOpenOpenThenTrue() {
+  public void givenIntervalOpenOpenWhenIncludeLeftAndRightPointFromIntervalOpenOpenThenIntersect() {
     Interval interval = this.intervalBuilder.open(left.getGreater()).open(right.getLess()).build();
     Interval interval1 = new IntervalBuilder().open(left.getEquals()).open(right.getEquals()).build();
     assertTrue(interval.intersect(interval1));
   }
 
   @Test
-  public void givenIntervalOpenOpenWhenIntersectWithTheSameThenFalse() {
+  public void givenIntervalOpenOpenWhenIntersectWithTheSameThenNotIntersect() {
     Interval interval = this.intervalBuilder.open(left.getEquals()).open(right.getEquals()).build();
     assertFalse(interval.intersect(interval));
   }
