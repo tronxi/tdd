@@ -67,11 +67,10 @@ public class IntervalTest {
   }
 
   @Test
-  public void givenIntervalOpenOpenWhenIntersectWithIntervalOpenOpenThenTrue() {
+  public void givenIntervalOpenOpenWhenIncludeLeftPointFromIntervalOpenOpenThenTrue() {
     Interval interval = this.intervalBuilder.open(left.getEquals()).open(right.getEquals()).build();
-    Interval interval1 = new IntervalBuilder().open(left.getLess()).open(right.getGreater()).build();
+    Interval interval1 = new IntervalBuilder().open(left.getLess()).open(left.getGreater()).build();
     assertTrue(interval.intersect(interval1));
-
   }
 
 }
